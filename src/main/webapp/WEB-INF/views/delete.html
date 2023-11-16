@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="/layout :: head">
+    <meta charset="UTF-8">
+    <title>Delete Student</title>
+</head>
+<body>
+<form th:action="@{/student/remove}" th:object="${student}" method="POST">
+<h1>Bạn có chắc muốn xoá <span th:text="${student.name}"></span>?</h1>
+    <div>
+        <input type="hidden" th:field="*{id}"/>
+        <input type="hidden" id="name" th:field="*{name}"/>
+        <input type="hidden" id="address" th:field="*{address}"/>
+        <input type="hidden" id="img" th:field="*{img}"/>
+        <button>Xoá</button>
+        <a th:href="@{/student}">Quay lại</a>
+    </div>
+</form>
+</body>
+</html>
